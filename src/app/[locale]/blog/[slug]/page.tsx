@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
     title: formatPageTitle(post.title),
     description: post.excerpt,
-    authors: [{ name: 'Tim Lee', url: 'https://betterhiretimlee.now' }],
+    authors: [{ name: 'Tim Lee', url: 'https://timlee.now' }],
     openGraph: {
       title: formatPageTitle(post.title),
       description: post.excerpt,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
           alt: post.title,
         },
       ],
-      siteName: 'BetterHireTimLee.Now',
+      siteName: 'Tim Lee',
       url: `/${locale}/blog/${post.slug}`,
     },
     twitter: {

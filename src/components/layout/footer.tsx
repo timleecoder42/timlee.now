@@ -193,7 +193,7 @@ export function Footer() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href={`https://github.com/${GITHUB_USERNAME}/betterhiretimlee.now`}
+                href={`https://github.com/${GITHUB_USERNAME}/timlee.now`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"

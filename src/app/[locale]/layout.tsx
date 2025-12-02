@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
     title,
     description,
-    authors: [{ name: 'Tim Lee', url: 'https://betterhiretimlee.now' }],
+    authors: [{ name: 'Tim Lee', url: 'https://timlee.now' }],
     openGraph: {
       title,
       description,
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
           height: 630,
         },
       ],
-      siteName: 'BetterHireTimLee.Now',
+      siteName: 'Tim Lee',
       url: `/${locale}`,
     },
     twitter: {

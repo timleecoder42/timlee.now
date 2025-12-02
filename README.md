@@ -1,4 +1,4 @@
-# Better Hire Tim Lee Now!
+# Tim Lee
 
 A modern, internationalized portfolio and blog website built with Next.js 15 and React 19.
 
