@@ -6,3 +6,4 @@ allowBuilds:
   '@parcel/watcher': true
   '@vercel/speed-insights': true
   sharp: true
+  unrs-resolver: true

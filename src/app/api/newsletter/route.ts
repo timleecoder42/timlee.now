@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     const result = newsletterSchema.safeParse(body);
 
     if (!result.success) {
-      return NextResponse.json({ code: result.error.errors[0]?.message }, { status: 400 });
+      return NextResponse.json({ code: result.error.issues[0]?.message }, { status: 400 });
     }
 
     const BUTTONDOWN_API_KEY = process.env.BUTTONDOWN_API_KEY;

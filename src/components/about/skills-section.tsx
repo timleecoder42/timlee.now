@@ -6,7 +6,7 @@ import {
   Cog6ToothIcon,
   CubeTransparentIcon,
 } from '@heroicons/react/24/outline';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, type Variants, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 const skills = [
@@ -57,7 +57,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,

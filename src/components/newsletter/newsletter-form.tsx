@@ -48,7 +48,7 @@ export function NewsletterForm() {
       // Client-side validation
       const result = newsletterSchema.safeParse({ email: state.email, locale });
       if (!result.success) {
-        const errorCode = result.error.errors[0]?.message;
+        const errorCode = result.error.issues[0]?.message;
         dispatch({ type: 'SET_ERROR', payload: t(`errors.${errorCode}`) });
         return;
       }
