@@ -2,5 +2,7 @@ packages:
   - '.'
 
 allowBuilds:
+  '@swc/core': true
+  '@parcel/watcher': true
   '@vercel/speed-insights': true
   sharp: true
