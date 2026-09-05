@@ -79,7 +79,7 @@ export const LetterSwapPingPongInView = ({
       if (isHovered || isInitialAnimating || !isMounted) return;
       setIsHovered(true);
 
-      safeAnimate('.letter', { top: reverse ? '100%' : '-100%' }, mergeTransition(transition));
+      safeAnimate('.letter', { y: reverse ? '100%' : '-100%' }, mergeTransition(transition));
       safeAnimate(
         '.letter-secondary',
         {
@@ -100,7 +100,7 @@ export const LetterSwapPingPongInView = ({
       safeAnimate(
         '.letter',
         {
-          top: '0%',
+          y: 0,
         },
         mergeTransition(transition)
       );
@@ -126,9 +126,7 @@ export const LetterSwapPingPongInView = ({
 
       safeAnimate(
         '.letter',
-        {
-          top: inViewDirection === 'up' ? '-100%' : '100%',
-        },
+        { y: inViewDirection === 'up' ? '-100%' : '100%' },
         mergeTransition(transition)
       );
       safeAnimate(
@@ -140,7 +138,7 @@ export const LetterSwapPingPongInView = ({
       ).then(() => {
         if (!isMounted) return;
 
-        safeAnimate('.letter', { top: '0%' }, { duration: 0 });
+        safeAnimate('.letter', { y: 0 }, { duration: 0 });
         safeAnimate('.letter-secondary', { top: reverse ? '-100%' : '100%' }, { duration: 0 }).then(
           () => {
             if (!isMounted) return;
@@ -156,7 +154,7 @@ export const LetterSwapPingPongInView = ({
 
   return (
     <motion.span
-      className={`inline-flex justify-center items-center relative overflow-hidden ${className}`}
+      className={`flex justify-center items-center relative overflow-hidden ${className}`}
       onHoverStart={startAnimation}
       onHoverEnd={endAnimation}
       onTapStart={startAnimation}
@@ -173,7 +171,7 @@ export const LetterSwapPingPongInView = ({
       <span
         className="sr-only"
         style={{
-          bottom: '0',
+          bottom: 0,
         }}
       >
         {label}
@@ -181,17 +179,12 @@ export const LetterSwapPingPongInView = ({
 
       {label.split('').map((letter: string, i: number) => {
         return (
-          <span
-            className="relative inline-block h-[1em] overflow-hidden align-top whitespace-pre"
-            style={{ clipPath: 'inset(0)' }}
-            key={i}
-          >
-            <motion.span className="relative inline-block letter" style={{ top: '0%' }}>
+          <span className="whitespace-pre relative flex" key={i} aria-hidden={true}>
+            <motion.span className={`relative letter`} style={{ top: 0 }}>
               {letter}
             </motion.span>
             <motion.span
-              className="absolute left-0 top-0 letter-secondary whitespace-pre"
-              aria-hidden={true}
+              className="absolute letter-secondary"
               style={{ top: inViewDirection === 'up' ? '100%' : '-100%' }}
             >
               {letter}
